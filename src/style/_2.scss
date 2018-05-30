@@ -1,0 +1,56 @@
+.whom-smm {
+  .content-section {
+    margin-top: 60px;
+    .wrap-block {
+      padding: 0 20px;
+      p {
+        margin: 5px 0 5px 0;
+        line-height: 22px;
+      }
+      img {
+        width: auto;
+        max-width: 100px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md){
+    .content-section {
+      .wrap-block {
+        padding: 0;
+        margin-bottom: 20px;
+        img {
+          width: auto;
+          height: 25px;
+          max-width: none;
+          &:nth-of-type(2){
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(sm){
+    .content-section {
+      margin-top: 40px;
+      .wrap-block {
+        padding: 0;
+        margin-bottom: 20px;
+        p {
+          font-size: 14px;
+          line-height: 20px;
+          margin: 5px 0 0 0;
+        }
+        img {
+          width: auto;
+          height: 20px;
+          max-width: none;
+          &:nth-of-type(2){
+            height: 12px;
+          }
+
+        }
+      }
+    }
+  }
+}
