@@ -1,0 +1,371 @@
+//1
+.advantage-kr {
+  margin-bottom: 170px;
+
+  .wrap-title p {
+    font-family: $Light;
+  }
+
+  .items {
+    margin-top: 70px;
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .icon {
+        width: auto;
+        height: 80px;
+        img {
+          width: 100%;
+        }
+      }
+      hr {
+        height: 4px;
+        width: 100px;
+        background-color: #3cc47c;
+        border: 0;
+      }
+      .text {
+        p {
+          margin: 0;
+          text-align: center;
+          font-size: 18px;
+          line-height: 28px;
+          padding: 0 35px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md)
+  {
+    .items {
+      .item {
+        padding-bottom: 25px;
+        .icon {
+          height: auto;
+          img {
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(sm){
+    margin-bottom: 90px;
+    .items {
+      margin-top: 40px;
+      .item {
+        padding-bottom: 25px;
+        .icon {
+          height: auto;
+          img {
+            width: 45px;
+          }
+        }
+        hr {
+          margin: 10px 0;
+          height: 2px;
+        }
+        .text p{
+          font-size: 16px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+}
+//2
+.advantage-smm {
+  .content-section {
+    margin-top: 60px;
+    .wrap-block {
+      padding: 0 15px;
+      .img {
+        max-width: 70px;
+        width: auto;
+        img {
+          height: 60px;
+          width: auto;
+        }
+      }
+      .title-block {
+        margin: 7px 0 7px 0;
+        font-family: $Semibold;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .descr {
+        margin: 7px 0 7px 0;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md){
+    .content-section {
+      .wrap-block {
+        padding: 0;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm){
+    .content-section {
+      margin-top: 40px;
+      .wrap-block {
+        padding: 0;
+        margin-bottom: 20px;
+        .img {
+          max-width: 70px;
+          margin: auto;
+          img {
+            height: 45px;
+          }
+        }
+        .title-block {
+          font-size: 16px;
+          line-height: 22px;
+          text-align: center;
+        }
+        .descr {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+//3
+.item-advantages {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  img {
+    width: auto;
+    height: 75px;
+  }
+  p {
+    text-align: center;
+    padding: 0 30px;
+    margin: 0;
+    margin-top: 10px;
+  }
+  span {
+    color: $red;
+  }
+}
+//4
+#feature {
+  margin-top: 100px;
+  @include media-breakpoint-down(sm){
+    margin-top: 70px;
+  }
+
+  button,
+  .button {
+    position: relative;
+    display: inline-block;
+    color: $black;
+    background-color: transparent;
+    margin: 0 auto;
+    padding: 30px 0;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    transition: all 0.3s;
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+      margin: 5px 0;
+      padding: 20px 0;
+    }
+    &:hover {
+      color: $blue;
+      cursor: pointer;
+      &:before,
+      &:after {
+        color: $blue;
+      }
+    }
+    &:after,
+    &:before {
+      transition: all 0.3s;
+    }
+  }
+  /* ---------------------- Vertical Tabs */
+  .tabs-im {
+    position: relative;
+    min-height: 0;
+    transition: all 0.5s;
+    margin: 50px 0;
+    @include media-breakpoint-down(md){
+      margin: 40px 0;
+    }
+
+    /* ---------------------- Tab */
+
+    .tab-im {
+      padding-right: 65px;
+      @include media-breakpoint-up (md) {
+        float: left;
+        clear: left;
+      }
+      @include media-breakpoint-down(sm) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      /* ---------------------- Tab Toggle */
+
+      .tab-toggle-im {
+        position: relative;
+        outline: none;
+        width: 100%;
+        font-family: $Light;
+        text-align: right;
+        @include media-breakpoint-down(md) {
+          text-align: left;
+          border-left: 5px solid $blueLight;
+          padding-left: 5px;
+        }
+        &.active {
+          color: $blue;
+          cursor: default;
+          font-family: $Semibold;
+          border-right: 15px solid $blue;
+          padding-right: 10px;
+          @include media-breakpoint-down(md) {
+            padding-right: 0;
+            border-right: none;
+            border-left: 10px solid $blue;
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+    /* ---------------------- Content */
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 1s;
+      @include media-breakpoint-up (lg) {
+        max-height: none;
+        position: absolute;
+        right: 0;
+        top: 40%;
+        opacity: 0;
+        padding: 0rem 2rem 2rem 2rem;
+        transform: translateX(100%);
+      }
+      &.active {
+        max-height: 1000px; // Enough to always clear longest content
+        @include media-breakpoint-up (lg) {
+          max-height: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .heading {
+        font-size: 30px;
+        color: $blue;
+        font-family: $Semibold;
+        line-height: 35px;
+        @include media-breakpoint-down(sm) {
+          font-size: 14px;
+        }
+        @include media-breakpoint-down(md) {
+          font-size: 18px;
+        }
+      }
+      .description {
+        font-size: 24px;
+        line-height: 36px;
+        @include media-breakpoint-down(lg) {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        @include media-breakpoint-down(sm) {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+//5
+.features-seo {
+
+  .tiles {
+    margin-top: 60px;
+
+    .tile{
+      height: 200px;
+      box-shadow: 0 6px 20px 0 rgba($black, 0.15);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+      text-align: center;
+      transition: 0.5s;
+      &:hover {
+        box-shadow: 0 6px 25px 0 rgba($black, 0.25);
+      }
+      .icon {
+        margin-bottom: 15px;
+        max-width: 40px;
+        height:auto;
+      }
+      .text {
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    .tiles {
+      margin-top: 40px;
+      .tile {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+//6
+.advantages-block {
+  .green-line {
+    width: 200px;
+    height: 4px;
+    background-color: $green;
+  }
+  .text-descr {
+    margin: 30px 0;
+    font-size: 18px;
+    text-align: center;
+    padding: 0 50px;
+  }
+  .wrap-check {
+    .check {
+      display: flex;
+      align-items: center;
+      margin-bottom: 35px;
+      img {
+        max-width: 50px;
+        height: auto;
+        margin-right: 15px;
+      }
+      div {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
+}
