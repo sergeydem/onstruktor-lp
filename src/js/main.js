@@ -88,6 +88,74 @@ $( document ).ready(function() {
     CustomSlideCircle();
     loadClientsSlider();
 
+
+//HOVER BUTTON в таб на стр ИМ стр 13
+    $(".table-container-footer .btn-pink").each(function (index, elem) {
+        var elemIndex = index + 2;
+        var _this = $(this);
+        _this.hover(function(){
+            $(".table-container-body tr td:nth-of-type(" + elemIndex + ")").css({"background-color": "rgba(68,125,152,.07)",  "transition": "all 0.3s ease-in"});
+        },function(){
+            $(".table-container-body tr td:nth-of-type(" + elemIndex + ")").css({"background-color": "transparent",  "transition": "all 0.3s ease-in"});
+        }).click(function () {
+            $(".table-container-body tr td").each(function () {
+                if ($(this).hasClass( "clicked" )) $(this).removeClass("clicked")
+            });
+
+            $(".table-container-body tr td:nth-of-type(" + elemIndex + ")").addClass("clicked");
+        });
+    });
+//END HOVER BUTTON в таб на стр ИМ стр 13
+//таблица на стр ИМ
+    var $body = $(".table-container-body"),
+        $header = $(".table-container-header"),
+        $footer = $(".table-container-footer");
+
+// Get ScrollBar width(From: http://bootstrap-table.wenzhixin.net.cn/)
+    var scrollBarWidth = (function () {
+        var inner = $('<p/>').addClass('fixed-table-scroll-inner'),
+            outer = $('<div/>').addClass('fixed-table-scroll-outer'),
+            w1, w2;
+        outer.append(inner);
+        $('body').append(outer);
+        w1 = inner[0].offsetWidth;
+        outer.css('overflow', 'scroll');
+        w2 = inner[0].offsetWidth;
+        if (w1 === w2) {
+            w2 = outer[0].clientWidth;
+        }
+        outer.remove();
+        return w1 - w2;
+    })();
+
+// Scroll horizontal
+    $body.on('scroll', function () {
+        $header.scrollLeft($(this).scrollLeft());
+        $footer.scrollLeft($(this).scrollLeft());
+    });
+
+// Redraw Header/Footer
+    var redraw = function() {
+        var tds = $body.find("> table > tbody > tr:first-child > td");
+        tds.each(function (i) {
+            var width = $(this).innerWidth(),
+                lastPadding = (tds.length -1 == i ? scrollBarWidth : 0);
+            lastHeader = $header.find("th:eq("+i+")").innerWidth(width + lastPadding);
+            lastFooter = $footer.find("th:eq("+i+")").innerWidth(width + lastPadding);
+        });
+    };
+
+// Selection
+    $body.find("> table > tbody > tr > td").click(function(e) {
+        $body.find("> table > tbody > tr").removeClass("info");
+        $(e.target).parent().addClass('info');
+    });
+
+// Listen to Resize Window
+    $(window).resize(redraw);
+    redraw();
+//конец таблицы на стр ИМ
+
 });
 
 //схема работы. круги. стр 10
