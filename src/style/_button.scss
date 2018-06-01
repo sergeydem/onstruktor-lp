@@ -3,3 +3,41 @@
   color: #ffffff;
   height: 50px;
 }
+
+.btn-catalog {
+  text-decoration: none;
+  color: inherit;
+
+  &_black-yellow {
+    color: $white;
+    background-color: $black;
+    width: 130px;
+    display: inline-block;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 14px;
+    transition:  0.2s ease;
+    &:hover {
+      text-decoration: none;
+      color: $white;
+      background-color: #eba710;
+    }
+  }
+
+  &_black-green {
+    color: $white;
+    background-color: $black;
+    width: 130px;
+    display: inline-block;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 16px;
+    transition:  0.2s ease;
+    border-radius: 3px;
+    &:hover {
+      text-decoration: none;
+      color: $white;
+      background-color: #2ec389;
+    }
+  }
+}
