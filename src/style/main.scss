@@ -9,6 +9,7 @@
 @import "8";
 @import "9";
 @import "10";
+@import "11";
 
 body {
   background: $white;
@@ -26,3 +27,5 @@ body {
 
 @import "owl.carousel.min.css";
 @import "owl.theme.default.min.css";
+@import "slick/slick.scss";
+@import "slick/slick-theme.scss";

@@ -86,6 +86,7 @@ $( document ).ready(function() {
 //КОНЕЦ аккордион, контекстная реклама. десктоп стр 10
 
     CustomSlideCircle();
+    loadClientsSlider();
 
 });
 
@@ -129,3 +130,47 @@ function CustomSlideCircle() {
     })
 }
 //КОНЕЦ схема работы. круги. стр 10
+
+//cслайдер клиентов стр 11
+function loadClientsSlider(){
+    $('.clients-slider').slick({
+        centerMode: true,
+        infinite: true,
+        slidesToShow: 3,
+        focusOnSelect: true,
+        centerPadding: '60px',
+        speed: 2000,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        arrows: true,
+        pauseOnFocus: false,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false
+                }
+            }
+        ]
+    });
+}
+//КОНЕЦ cслайдер клиентов стр 11
