@@ -63,4 +63,16 @@ $( document ).ready(function() {
     });
 //END блок результаты seo. переключение между слайдами
 
+
+//увеличения изображения стр 9
+    Zoomerang
+        .config({
+            maxHeight: 800,
+            maxWidth: 800,
+            bgColor: '#000',
+            bgOpacity: .85
+        })
+        .listen('.zoom-img');
+//КОНЕЦ увеличения изображения стр 9
+
 });
