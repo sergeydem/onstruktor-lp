@@ -86,60 +86,21 @@
   text-align: center;
 }
 
-
-.whom-smm {
-  .content-section {
-    margin-top: 60px;
-    .wrap-block {
-      padding: 0 20px;
-      p {
-        margin: 5px 0 5px 0;
-        line-height: 22px;
-      }
-      img {
-        width: auto;
-        max-width: 100px;
-      }
-    }
-  }
-
-  @include media-breakpoint-down(md){
-    .content-section {
-      .wrap-block {
-        padding: 0;
-        margin-bottom: 20px;
-        img {
-          width: auto;
-          height: 25px;
-          max-width: none;
-          &:nth-of-type(2){
-            height: 15px;
-          }
-        }
-      }
-    }
-  }
-  @include media-breakpoint-down(sm){
-    .content-section {
-      margin-top: 40px;
-      .wrap-block {
-        padding: 0;
-        margin-bottom: 20px;
-        p {
-          font-size: 14px;
-          line-height: 20px;
-          margin: 5px 0 0 0;
-        }
-        img {
-          width: auto;
-          height: 20px;
-          max-width: none;
-          &:nth-of-type(2){
-            height: 12px;
-          }
-
-        }
-      }
-    }
-  }
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+  width:20px;
+  height:20px;
+  position: absolute;
+  top: 50%;
+}
+.owl-carousel .owl-nav .owl-prev{
+  background: url(../img/Arrows-Back-icon.png) no-repeat;
+  background-size: contain;
+  left: -40px;
+}
+.owl-carousel .owl-nav .owl-next{
+  background: url(../img/Arrows-Back-icon.png) no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  right: -40px;
 }
