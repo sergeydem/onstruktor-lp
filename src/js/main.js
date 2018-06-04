@@ -87,6 +87,7 @@ $( document ).ready(function() {
 
     CustomSlideCircle();
     loadClientsSlider();
+    loadProductSlider();
 
 
 //HOVER BUTTON в таб на стр ИМ стр 13
@@ -296,3 +297,30 @@ function loadClientsSlider(){
     });
 }
 //КОНЕЦ cслайдер клиентов стр 11
+
+
+function loadProductSlider(){
+    $('.product-img-main').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow:"<button type='button' class='slick-prev pull-left'><i class='material-icons'>chevron_left</i></button>",
+        nextArrow:"<button type='button' class='slick-next pull-right'><i class='material-icons'>chevron_right</i></button>",
+        fade: true,
+        adaptiveHeight: true,
+        asNavFor: '.product-img-preview'
+    });
+    $('.product-img-preview').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.product-img-main',
+        dots: false,
+        nav: false,
+        arrows: false,
+        focusOnSelect: true
+
+    });
+
+}
