@@ -40,4 +40,21 @@
       background-color: #2ec389;
     }
   }
+
+  &_none-fill{
+    padding: 15px 40px;
+    font-size: 24px;
+    border-radius: 5px;
+    font-family: $Regular;
+    transition: 0.4s;
+    background-color: transparent;
+    color: $red;
+    border: 2px solid $red;
+    text-decoration: none;
+    &:hover {
+      background-color: $red;
+      color: $white;
+      text-decoration: none;
+    }
+  }
 }

@@ -58,3 +58,127 @@
     }
   }
 }
+//3
+.wrap-catalog-3 {
+  padding: 25px 0;
+  margin: 40px 15px 40px 0;
+  border: 2px solid $white;
+  border-radius: 4px;
+  transition: 0.5s;
+
+  .wrap-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .img-product {
+      max-width: 270px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width:auto;
+        height: 300px;
+        @include media-breakpoint-down(sm){
+          height: 220px;
+        }
+      }
+    }
+  }
+
+  .wrap-title-charact {
+    height: 100%;
+    width: 100%;
+    padding-top: 5%;
+    .title-product {
+      font-size: 30px;
+      font-family: $Semibold;
+      line-height: 30px;
+    }
+    .sub-title-product {
+      font-size: 24px;
+      font-family:$Semibold;
+      padding-bottom: 15px;
+      line-height: 30px;
+    }
+
+    @include media-breakpoint-down(sm){
+      .sub-title-product {
+        font-size: 20px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .wrap-price {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .rpice {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+      p {
+        font-size: 40px;
+      }
+    }
+    .btn-more-info {
+      width: 100%;
+      text-align: center;
+    }
+    @include media-breakpoint-down(sm){
+      .rpice p {
+        font-size: 34px;
+      }
+    }
+    @include media-breakpoint-down(xs){
+      .rpice p {
+        font-size: 26px;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+  }
+
+  @include media-breakpoint-down(sm){
+    margin: 30px 0 30px 0;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+.characteristics {
+  .list-group {
+    width: 100%;
+
+    .item {
+      overflow: hidden;
+      margin: 0;
+      font-size: 16px;
+      &:after {
+        content:'....................................................................................................................................................................................................................................................................................................................';
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      span:first-of-type {
+        float:left;
+        margin-right: 10px;
+      }
+      span:last-of-type {
+        float:right;
+        margin-left: 10px;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm){
+    .list-group .item{
+      font-size: 14px;
+      //line-height: 20px;
+    }
+  }
+}
