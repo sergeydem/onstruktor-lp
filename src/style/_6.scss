@@ -182,3 +182,56 @@
     }
   }
 }
+//4
+.wrap-catalog-4 {
+  margin: 70px 0;
+  .banner {
+    .title {
+      font-size: 60px;
+      font-family: $Semibold;
+      color: #000000;
+      letter-spacing: -4px;
+      margin-bottom: 40px;
+      text-align: center;
+      text-decoration: underline;
+    }
+    .image {
+      background-image: url(../img/6/girl-banner.png);
+      background-position: right;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 500px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 20px;
+    }
+  }
+  .catalog {
+    .filter {
+      margin-bottom: 40px;
+      a {
+        color: #787878;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-family: $Regular;
+        letter-spacing: 0.8px;
+        margin-right: 40px;
+        &:hover {
+          text-decoration: none;
+          color: #000000;
+        }
+        &.active-filter {
+          color: #000000;
+        }
+      }
+    }
+    .products {
+
+    }
+  }
+}

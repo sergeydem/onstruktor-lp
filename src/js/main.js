@@ -88,6 +88,7 @@ $( document ).ready(function() {
     CustomSlideCircle();
     loadClientsSlider();
     loadProductSlider();
+    loadCatalogProduct();
 
 
 //HOVER BUTTON в таб на стр ИМ стр 13
@@ -318,6 +319,20 @@ function loadClientsSlider(){
     });
 }
 //КОНЕЦ cслайдер клиентов стр 11
+
+//cслайдер товара стр 6
+function loadCatalogProduct(){
+    $('.catalog-product-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        speed: 2000,
+        autoplay: false,
+        arrows: true,
+        prevArrow:"<button type='button' class='slick-prev pull-left'><i class='material-icons'>chevron_left</i></button>",
+        nextArrow:"<button type='button' class='slick-next pull-right'><i class='material-icons'>chevron_right</i></button>"
+    });
+}
+//КОНЕЦ cслайдер товара стр 6
 
 //слайдер товара в карточке стр 7
 function loadProductSlider(){
