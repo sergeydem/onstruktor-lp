@@ -230,6 +230,13 @@ $( document ).ready(function() {
     });
 
 
+
+//стр 6 . лайк
+    $(".like").on('click', function () {
+        $(this).find('.put-like').toggleClass("active-like");
+    });
+//Конец стр 6 . лайк
+
 });
 
 

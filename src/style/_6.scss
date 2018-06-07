@@ -186,6 +186,7 @@
 .wrap-catalog-4 {
   margin: 70px 0;
   .banner {
+    margin-top: 100px;
     .title {
       font-size: 60px;
       font-family: $Semibold;
@@ -231,7 +232,147 @@
       }
     }
     .products {
+      margin-bottom: 50px;
+      .wrap-product {
+        .top {
+          .image {
+            background-color: #f4f4f4;
+            position: relative;
+            height: 320px;
+            .new {
+              background-color: #c0444a;
+              color: #ffffff;
+              text-transform: uppercase;
+              font-size: 10px;
+              letter-spacing: 0.7px;
+              max-width: 65px;
+              text-align: center;
+              position: absolute;
+              left: 0;
+              top: 10px;
+              z-index: 1;
+            }
+            .like {
+              position: absolute;
+              right: 5px;
+              top: 5px;
+              text-decoration: none;
+              z-index: 1;
+              p>i {
+                color: #8e8e8e;
+                font-size: 16px;
+              }
+              p {
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+                &.put-like {
+                  display: none;
+                  z-index: 2;
+                  &.active-like {
+                    display: block;
+                    i {
+                      color: #c0444a;
+                    }
+                  }
+                }
+              }
+            }
+            .catalog-product-slider {
 
+              .slick-prev, .slick-next {
+                z-index: 1;
+                .material-icons {
+                  color: #474747;
+                  display: none;
+                }
+                &:before {
+                  content: '';
+                }
+              }
+              .slick-prev {
+                left: 0;
+              }
+              .slick-next {
+                right: 0;
+              }
+
+              .slide {
+                outline: none;
+                height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                  width: 185px;
+                  height: auto;
+                }
+              }
+            }
+            .navigation-button {
+              position: absolute;
+              bottom: 15px;
+              //display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              display: none;
+              a {
+                text-decoration: none;
+                color: inherit;
+                width: 40px;
+                height: 40px;
+                background-color: #5e5e5e;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 7px;
+                transition: 0.3s ease;
+                opacity: 0.8;
+                &:hover {
+                  background-color: #474747;
+                  opacity: 1;
+                }
+                i {
+                  color: #ffffff;
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+        .bottom {
+          .name-price {
+            .name {
+              font-family: $Regular;
+              font-size: 16px;
+              text-align: center;
+              margin: 0;
+              margin-top: 10px;
+            }
+            .price {
+              font-size: 16px;
+              text-align: center;
+              font-family: $ExtraBold;
+              margin: 0;
+              letter-spacing: -1px;
+            }
+          }
+        }
+        &:hover {
+          .top .image .navigation-button{
+            display: flex;
+          }
+          .top .image .catalog-product-slider {
+            .slick-prev, .slick-next {
+              .material-icons {
+                display: block;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
