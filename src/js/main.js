@@ -167,54 +167,87 @@ $( document ).ready(function() {
 
 
 //Google Maps JS
-//     var locations = [
-//         ['<b>Name 1</b><br>Address Line 1<br>Bismarck, ND 58501<br>Phone: 701-555-1234<br><a href="#" >Link<a> of some sort.', 47.84208743, 35.14388347, 4],
-//         ['<b>Name 2</b><br>Address Line 1<br>Fargo, ND 58103<br>Phone: 701-555-4321<br><a href="#" target="_blank">Link<a> of some sort.', 50.42897675, 30.507653, 5]
-//         /*
-//          * Next point on map
-//          *   -Notice how the last number within the brackets incrementally increases from the prior marker
-//          *   -Use http://itouchmap.com/latlong.html to get Latitude and Longitude of a specific address
-//          *   -Follow the model below:
-//          *      ['<b>Name 3</b><br>Address Line 1<br>City, ST Zipcode<br>Phone: ###-###-####<br><a href="#" target="_blank">Link<a> of some sort.', ##.####, -##.####, #]
-//          */
-//     ];
-//
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//         zoom: 6,
-//         /* Zoom level of your map */
-//         center: new google.maps.LatLng(48.86415588, 31.5623405),
-//         /* coordinates for the center of your map */
-//         mapTypeId: google.maps.MapTypeId.ROADMAP
-//     });
-//
-//     var infowindow = new google.maps.InfoWindow();
-//
-//     var marker, i;
-//
-//     for (i = 0; i < locations.length; i++) {
-//         marker = new google.maps.Marker({
-//             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-//             map: map
-//         });
-//
-//         google.maps.event.addListener(marker, 'click', (function(marker, i) {
-//             return function() {
-//                 infowindow.setContent(locations[i][0]);
-//                 infowindow.open(map, marker);
-//             }
-//         })(marker, i));
-//     }
+    var locations = [
+        ['<b>Name 1</b><br>Address Line 1<br>Bismarck, ND 58501<br>Phone: 701-555-1234<br><a href="#" >Link<a> of some sort.', 47.84208743, 35.14388347, 4],
+        ['<b>Name 2</b><br>Address Line 1<br>Fargo, ND 58103<br>Phone: 701-555-4321<br><a href="#" target="_blank">Link<a> of some sort.', 50.42897675, 30.507653, 5]
+        /*
+         * Next point on map
+         *   -Notice how the last number within the brackets incrementally increases from the prior marker
+         *   -Use http://itouchmap.com/latlong.html to get Latitude and Longitude of a specific address
+         *   -Follow the model below:
+         *      ['<b>Name 3</b><br>Address Line 1<br>City, ST Zipcode<br>Phone: ###-###-####<br><a href="#" target="_blank">Link<a> of some sort.', ##.####, -##.####, #]
+         */
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        /* Zoom level of your map */
+        center: new google.maps.LatLng(48.86415588, 31.5623405),
+        /* coordinates for the center of your map */
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+    }
 
 //END Google Maps JS
 
+    //Google Maps JS
+    var locations1 = [
+        ['<b>Name 1</b><br>Address Line 1<br>Bismarck, ND 58501<br>Phone: 701-555-1234<br><a href="#" >Link<a> of some sort.', 47.84208743, 35.14388347, 4],
+        ['<b>Name 2</b><br>Address Line 1<br>Fargo, ND 58103<br>Phone: 701-555-4321<br><a href="#" target="_blank">Link<a> of some sort.', 50.42897675, 30.507653, 5]
+        /*
+         * Next point on map
+         *   -Notice how the last number within the brackets incrementally increases from the prior marker
+         *   -Use http://itouchmap.com/latlong.html to get Latitude and Longitude of a specific address
+         *   -Follow the model below:
+         *      ['<b>Name 3</b><br>Address Line 1<br>City, ST Zipcode<br>Phone: ###-###-####<br><a href="#" target="_blank">Link<a> of some sort.', ##.####, -##.####, #]
+         */
+    ];
 
+    var map1 = new google.maps.Map(document.getElementById('map1'), {
+        zoom: 6,
+        /* Zoom level of your map */
+        center: new google.maps.LatLng(48.86415588, 31.5623405),
+        /* coordinates for the center of your map */
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 
-    // $('#zoom_01').elevateZoom({
-    //     zoomType: "inner",
-    //     cursor: "crosshair",
-    //     zoomWindowFadeIn: 500,
-    //     zoomWindowFadeOut: 750
-    // });
+    var infowindow1 = new google.maps.InfoWindow();
+
+    var marker1, k;
+
+    for (k = 0; k < locations1.length; k++) {
+        marker1 = new google.maps.Marker({
+            position: new google.maps.LatLng(locations1[k][1], locations1[k][2]),
+            map: map1
+        });
+
+        google.maps.event.addListener(marker1, 'click', (function(marker1, k) {
+            return function() {
+                infowindow1.setContent(locations1[k][0]);
+                infowindow1.open(map1, marker1);
+            }
+        })(marker1, k));
+    }
+
+//END Google Maps JS
+
 
     //initiate the plugin and pass the id of the div containing gallery images
     $("#zoom_01").elevateZoom({

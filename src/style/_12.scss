@@ -1,10 +1,82 @@
 //1
-#map_container{
-  position: relative;
-  margin-top: 50px;
+.contact-form {
+  margin: 50px 0 100px 0;
+  .title-form {
+    margin-bottom: 60px;
+    text-align: center;
+    font-size: 30px;
+  }
+  form {
+    max-width: 500px;
+    margin: auto;
+    .form-group {
+      input, textarea {
+        border: none;
+        border-bottom: 1px solid #b7b7b7;
+        border-radius: 0;
+        margin-bottom: 45px;
+      }
+    }
+    .wrap-btn-submit {
+      text-align: center;
+    }
+  }
 }
+.more-contact {
+  margin: 150px 0 150px;
+  .title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .item {
+    text-align: center;
+    border-right: 1px solid #e1e1e1;
+    .title {
+      font-size: 22px;
+      font-family: $Semibold;
+      margin-bottom: 10px;
+    }
+    .descr {
+      font-size: 16px;
+      font-family: $Light;
+      margin-bottom: 10px;
+    }
+    .mail-or-phone {
+      a {
+        text-decoration: none;
+        color: #e74c3c;
+        font-family: $Semibold;
+      }
+    }
+    &.last {
+      border-right: none;
+    }
+  }
+}
+#map_container{
+   position: relative;
+   margin-top: 50px;
+ }
 #map{
   height: 450px;
   overflow: hidden;
   position: relative;
+}
+//2
+#map_container1{
+  position: relative;
+  margin-top: 50px;
+}
+#map1{
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+.contact-block-2 {
+  .title {
+    font-size: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
 }

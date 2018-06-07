@@ -12,6 +12,23 @@
     border-radius: 0;
     background-color: transparent;
   }
+
+  &_non-fill {
+    padding: 0 40px;
+    font-size: 20px;
+    border-radius:100px;
+    font-family: $Regular;
+    transition: 0.4s;
+    background-color: transparent;
+    color: $red;
+    border: 1px solid $red;
+    text-decoration: none;
+    &:hover {
+      background-color: $red;
+      color: $white;
+      text-decoration: none;
+    }
+  }
 }
 
 .btn-catalog {
