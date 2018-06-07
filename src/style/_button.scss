@@ -41,6 +41,24 @@
     }
   }
 
+  &_black-gray {
+    color: $white;
+    background-color: $black;
+    display: inline-block;
+    text-align: center;
+    padding: 15px 18px;
+    font-size: 13px;
+    transition:  0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    height: 48px;
+    &:hover {
+      text-decoration: none;
+      color: $white;
+      background-color: #bfbfbf;
+    }
+  }
+
   &_none-fill{
     padding: 15px 40px;
     font-size: 24px;
