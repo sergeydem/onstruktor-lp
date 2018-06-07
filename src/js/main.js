@@ -88,7 +88,10 @@ $( document ).ready(function() {
     CustomSlideCircle();
     loadClientsSlider();
     loadProductSlider();
+    loadProductSlider1();
     loadCatalogProduct();
+    $(".toggle-text").each(textToggle);
+    $(".toggle-text-link").on('click',linkToggle);
 
 
 //HOVER BUTTON в таб на стр ИМ стр 13
@@ -295,7 +298,41 @@ $( document ).ready(function() {
     });
 //стр 7. кол-во тоарв
 
+
+
 });
+
+//больше текста в карточке
+var ellipsestext = "...";
+var moretext     = "подробнее";
+var lesstext     = "скрыть";
+
+function textToggle(){
+    var content = $(this).html();
+    var showChar     = 400;   // How many characters are shown by default
+    if(content.length > showChar) {
+
+        var contentExcert = content.substr(0, showChar);
+        var contentRest = content.substr(showChar, content.length - showChar);
+        var html = contentExcert + '<span class="toggle-text-ellipses">' + ellipsestext + ' </span> <span class="toggle-text-content"><span class="contentRest">' + contentRest + '</span><a href="javascript:;" class="toggle-text-link">' + moretext + '</a></span>';
+
+        $(this).html(html);
+    }
+}
+//больше текста в карточке
+function linkToggle(){
+    if($(this).hasClass("less")) {
+        $(this).removeClass("less");
+        $(this).html(moretext);
+    } else {
+        $(this).addClass("less");
+        $(this).html(lesstext);
+    }
+
+    $('.toggle-text-ellipses').toggle();
+    $('.contentRest').toggle();
+    return false;
+}
 
 
 
@@ -426,3 +463,39 @@ function loadProductSlider(){
 
 }
 //КОНЕЦ слайдер товара в карточке стр 7
+
+function loadProductSlider1(){
+    $('.product-img-main1').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        adaptiveHeight: true,
+        asNavFor: '.product-img-preview1'
+    });
+    $('.product-img-preview1').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.product-img-main1',
+        dots: false,
+        nav: true,
+        arrows: true,
+        vertical: true,
+        centerMode: false,
+        verticalSwiping: true,
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    vertical: false,
+                    swipeToSlide: true,
+                    verticalSwiping: false,
+                    nav: false,
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+}

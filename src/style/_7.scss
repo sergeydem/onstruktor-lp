@@ -417,10 +417,103 @@
       color: #000000;
       font-family: $Semibold;
     }
-    font-size: 14px;
-    line-height: 24px;
-    font-family: $Light;
-    width: 100%;
-    letter-spacing: 0.8px;
+    p.toggle-text {
+      font-size: 14px;
+      line-height: 24px;
+      font-family: $Light;
+      width: 100%;
+      letter-spacing: 0.8px;
+      text-transform: none;
+    }
+    .toggle-text-content  {
+      span {
+        display: none;
+      }
+    }
+    .toggle-text-link {
+      display: block;
+      color: #1f24e2;
+      font-family: $Regular;
+    }
+  }
+  .image-product {
+    .product-img-main1 {
+      width: 100%;
+      .img-main {
+        width: 100%;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: auto;
+          height: auto;
+          max-height: 350px;
+        }
+      }
+    }
+    .product-img-preview1 {
+      margin: 0 auto;
+      .preview {
+        outline: none;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        height: 70px;
+        img {
+          padding: 5px;
+          width: 100%;
+          height: fill-available;
+        }
+        &.slick-current{
+          border-bottom: 3px solid #1f24e2;
+        }
+      }
+
+      .slick-next{
+        top: 100%;
+        &:before {
+          background-image: url('../../images/icons/btn-arrow-down.png');
+          //right: 50%;
+        }
+      }
+
+      .slick-prev {
+        top: 0;
+        &:before {
+          background-image: url('../../images/icons/btn-arrow-up-red.png');
+          top: 40px;
+          //left: 50%;
+        }
+      }
+      .slick-next, .slick-prev {
+        width: 100%;
+        background-color: transparent;
+        position: initial;
+        &:before {
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          content:"";
+          position: relative;
+        }
+      }
+    }
+    @include media-breakpoint-down(sm){
+      .product-img-main1 {
+        .img-main {
+          img {
+            width: auto;
+            height: 400px;
+          }
+        }
+      }
+      .product-img-preview1 {
+        width: 100%;
+      }
+    }
   }
 }
