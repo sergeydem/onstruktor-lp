@@ -2,6 +2,16 @@
   background-color: #000000;
   color: #ffffff;
   height: 50px;
+
+  &_nimus_plus {
+    height: auto;
+    width: auto;
+    padding: 0;
+    border: none;
+    line-height: initial;
+    border-radius: 0;
+    background-color: transparent;
+  }
 }
 
 .btn-catalog {
@@ -56,6 +66,28 @@
       text-decoration: none;
       color: $white;
       background-color: #bfbfbf;
+    }
+  }
+
+  &_blue {
+    width: 120px;
+    display: inline-block;
+    color: $white;
+    background-color: #1f24e2;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 13px;
+    transition:  0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    height: 45px;
+    border-radius: 100px;
+    font-family: $ExtraBold;
+    box-shadow: 0 5px 23px 0 rgba(#000000, .2);
+    &:hover {
+      text-decoration: none;
+      color: $white;
+      background-color: #1f24be;
     }
   }
 

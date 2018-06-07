@@ -221,3 +221,206 @@
     }
   }
 }
+//3
+.wrap-product-3 {
+  margin: 50px 0;
+
+  .product-information {
+    .type {
+      text-transform: uppercase;
+      color: #1f24e2;
+      font-size: 14px;
+      font-family: $Regular;
+      letter-spacing: 1px;
+    }
+    .name-product {
+      font-size: 34px;
+      font-family: $ExtraBold;
+      text-transform: uppercase;
+      line-height: 34px;
+      margin-bottom: 15px;
+    }
+    .wrap-rating {
+      display: flex;
+      width: 100%;
+      margin-bottom: 50px;
+      .star {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        i {
+          font-size: 16px;
+        }
+      }
+      .reviews {
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+    .wrap-color-size {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+      .color {
+        font-family: $Semibold;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-right: 50px;
+        .circle {
+          margin-top: 10px;
+          width: 100%;
+          display: flex;
+          a {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: inherit;
+            &.orange {
+              background-color: #f9895d;
+            }
+            &.black {
+              background-color: #000000;
+            }
+            &.gray {
+              background-color: #a1a1a1;
+            }
+            &.green {
+              background-color: #17c15f;
+            }
+            &.red {
+              background-color: #f30000;
+            }
+            &.active-color {
+              i {display: block;}
+            }
+            i {
+              font-size: 16px;
+              color: #ffffff;
+              display: none;
+            }
+          }
+        }
+      }
+      .size {
+        font-family: $Semibold;
+        text-transform: uppercase;
+        font-size: 14px;
+        .item {
+          margin-top: 5px;
+          font-family: $Regular;
+          a {
+            text-decoration: none;
+            color: black;
+            margin-right: 10px;
+            &.active-size {
+              color: #1f24e2;
+            }
+          }
+        }
+      }
+    }
+    .wrap-price {
+      display: flex;
+      align-items:center;
+      margin-bottom: 35px;
+      .price {
+        font-size: 18px;
+        font-family: $ExtraBold;
+        letter-spacing: -1px;
+        margin-right: 25px;
+      }
+      .sale {
+        display: flex;
+        align-items: center;
+        .price {
+          font-size: 10px;
+          color: #393939;
+          font-family: $Light;
+          margin: 0;
+          text-decoration: line-through;
+          margin-right: 10px;
+        }
+        .discount {
+          font-size: 12px;
+          color: #ffffff;
+          background-color: #000000;
+          letter-spacing: -1px;
+          margin: 0;
+          padding: 0 5px;
+          margin-right: 10px;
+        }
+      }
+      .coutn {
+        margin: 0 15px;
+        .input-group {
+          border: 1px solid #969696;
+          border-radius: 100px;
+          width: 120px;
+          height: 45px;
+          padding: 0 15px;
+          .input-group-btn {
+            display: flex;
+            .btn_nimus_plus {
+              box-shadow: none;
+              i {
+                color: #969696;
+                font-size: 16px;
+              }
+            }
+          }
+          .input-number {
+            background-color: transparent;
+            width: 50px;
+            text-align: center;
+            color: #000000;
+            font-family: $Semibold;
+            border: none;
+            outline: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+    .wrap-comepair {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #cac9c9;
+        display: flex;
+        &:hover {
+          color: #000000;
+          i {color: #000000}
+        }
+        i {
+          color: #cac9c9;
+          font-size: 16px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .description-product {
+    margin-top: 35px;
+    p {
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #000000;
+      font-family: $Semibold;
+    }
+    font-size: 14px;
+    line-height: 24px;
+    font-family: $Light;
+    width: 100%;
+    letter-spacing: 0.8px;
+  }
+}
