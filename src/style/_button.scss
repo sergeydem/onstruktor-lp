@@ -29,6 +29,24 @@
       text-decoration: none;
     }
   }
+
+  &_red {
+    padding: 0 40px;
+    font-size: 15px;
+    border-radius:0;
+    font-family: $Regular;
+    transition: 0.4s;
+    background-color: #c23a2b;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      background-color: transparent;
+      color: #c23a2b;
+      text-decoration: none;
+      border: 1px solid #c23a2b;
+    }
+  }
 }
 
 .btn-catalog {
