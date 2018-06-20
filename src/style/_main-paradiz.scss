@@ -14,7 +14,21 @@
     flex-direction: column;
     .top {
       &.menu {
+        width: 100%;
         margin-top: 15px;
+        .navbar {
+          .navbar-toggler {
+            border: none;
+            outline: none;
+            i {
+              color: #fff;
+              font-size: 34px;
+            }
+          }
+          .collapse.navbar-collapse {
+            justify-content: flex-end;
+          }
+        }
         $duration: .2s;
         $distance: 8px;
         $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
@@ -92,11 +106,24 @@
         font-size: 130px;
         text-shadow: -3px 2px 9px rgba(0,0,0,0.36);
       }
+      @include media-breakpoint-down(md){
+        .descr {
+          font-size: 18px;
+          left: 23%;
+          top: 13%;
+        }
+        .name {
+          font-size: 80px;
+        }
+      }
     }
   }
   .section1 {
     margin-bottom: 150px;
     margin-top: 150px;
+    @include media-breakpoint-down(sm){
+      margin: 100px 0;
+    }
     .items {
       margin-top: 60px;
       .item {
@@ -151,6 +178,9 @@
     margin-top: 150px;
     color: #ffffff;
     padding: 25px 0;
+    @include media-breakpoint-down(sm){
+      margin: 100px 0;
+    }
     .content-section {
       margin-top: 60px;
       .wrap-block {
@@ -213,6 +243,9 @@
   .section3 {
     margin-bottom: 150px;
     margin-top: 150px;
+    @include media-breakpoint-down(sm){
+      margin: 100px 0;
+    }
     .adv_number {
       margin-top: 60px;
       p > span {
@@ -234,9 +267,15 @@
   .section4 {
     margin-bottom: 150px;
     margin-top: 150px;
+    @include media-breakpoint-down(sm){
+      margin: 100px 0;
+    }
     .block-animation-image.wrap-blocks {
       height: 450px;
       width: 100%;
+      @include media-breakpoint-between(md,lg){
+        height: 280px;
+      }
       .link_to {
         text-decoration: none;
         color: inherit;
@@ -249,12 +288,14 @@
         height: 100%;
         background-repeat: no-repeat;
         background-blend-mode: multiply;
+        background-size: 100%;
+        //background-size: cover;
         background-color: rgba(3, 6, 8, 0.15);
         position: relative;
         overflow: hidden;
         color: $white;
         text-align: center;
-        background-size: 110%;
+
         background-position: center;
         transition: 0.3s ease;
         padding: 0 50px;
@@ -262,17 +303,23 @@
           background-size: 120%;
           background-color: rgba(3, 6, 8, 0.05);
         }
-
         .title {
           font-size:30px;
           line-height: 38px;
           margin-bottom: 30px;
           width: 100%;
           font-family: $Semibold;
+          @include media-breakpoint-down(sm){
+            font-size:20px;
+            line-height: 24px;
+          }
         }
         .descr {
           font-size: 18px;
           width: 100%;
+          @include media-breakpoint-down(sm){
+            font-size: 16px;
+          }
         }
       }
       .left-block {
@@ -286,6 +333,9 @@
   .section5 {
     margin-bottom: 150px;
     margin-top: 150px;
+    @include media-breakpoint-down(sm){
+      margin: 100px 0;
+    }
     .wrap-stages{
         margin-top: 60px;
         @include media-breakpoint-down(sm){
@@ -302,7 +352,7 @@
           &:nth-child(odd), &:nth-child(even) {
             p {
               span {
-                font-size: 20px;
+                font-size: 18px;
                 line-height: 18px;
                 display: flex;
                 flex-direction: column;
@@ -467,6 +517,9 @@
   .section6 {
     margin-bottom: 100px;
     margin-top: 150px;
+    @include media-breakpoint-down(sm){
+      margin: 100px 0;
+    }
     .contact-form {
       margin: 50px 0 100px 0;
       .title-form {
@@ -474,6 +527,10 @@
         text-align: center;
         font-size: 28px;
         font-family: $Semibold;
+        @include media-breakpoint-down(sm){
+          font-size: 20px;
+          line-height: 24px;
+        }
       }
       form {
         max-width: 500px;
@@ -499,6 +556,10 @@
         text-align: center;
         margin-bottom: 60px;
         font-family: $Semibold;
+        @include media-breakpoint-down(sm){
+          font-size: 20px;
+          line-height: 24px;
+        }
       }
       .item {
         text-align: center;
@@ -523,12 +584,28 @@
         &.last {
           border-right: none;
         }
+
+        @include media-breakpoint-down(sm){
+          margin-bottom: 30px;
+          border-right: none;
+          .title {
+            font-size: 18px;
+            margin-bottom: 0;
+          }
+          .descr {
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+        }
       }
     }
 
   }
   .section7 {
     margin: 50px 0 100px 0;
+    @include media-breakpoint-down(sm){
+      margin: 25px 0 70px 0;
+    }
     #map_container{
       position: relative;
       margin-top: 50px;
@@ -565,6 +642,12 @@
       font-size:28px;
       line-height: 38px;
       font-family: $Semibold;
+    }
+    @include media-breakpoint-down(sm){
+      .descr {
+        font-size:20px;
+        line-height: 24px;
+      }
     }
   }
   .btn {
