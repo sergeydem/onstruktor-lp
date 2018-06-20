@@ -15,25 +15,63 @@
     .top {
       &.menu {
         margin-top: 15px;
+        $duration: .2s;
+        $distance: 8px;
+        $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
         ul {
-          margin: 0;
-          padding: 0;
           list-style-type: none;
-          display: flex;
-          align-items: center;
+          margin: 0;
+          text-align: center;
+
           li {
+            display: inline-block;
             margin: 0 20px;
-            a {
-              text-decoration: none;
-              color: #ffffff;
-              text-transform: uppercase;
-              font-family: $Regular;
-              letter-spacing: 0.8px;
-              font-size: 15px;
-              img {
-                max-width: 100px;
-                height: auto;
-              }
+            font-family: $Regular;
+          }
+        }
+        a {
+          font-size: 14px;
+          color: #ffffff;
+          position: relative;
+          text-transform: uppercase;
+          text-decoration: none;
+          padding-bottom: 8px;
+          letter-spacing: 1px;
+
+
+          &:before,
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0; right: 0;
+            height: 4px;
+            background-color: #a63b27;
+
+          }
+          &:before {
+            opacity: 0;
+            transform: translateY(- $distance);
+            transition: transform 0s $easeOutBack, opacity 0s;
+          }
+          &:after {
+            opacity: 0;
+            transform: translateY($distance/2);
+            transition: transform $duration $easeOutBack, opacity $duration;
+          }
+          &:hover,
+          &:focus {
+            &:before,
+            &:after {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            &:before {
+              transition: transform $duration $easeOutBack, opacity $duration;
+            }
+            &:after {
+              transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
             }
           }
         }
