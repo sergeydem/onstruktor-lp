@@ -626,8 +626,10 @@ $( document ).ready(function() {
             $("#callback-form").submit(function() { //устанавливаем событие отправки для формы с id=form
                 var form_data = $(this).serialize(); //собераем все данные из формы
                 var str =  $(this).find("input[id^='phone']").val();
+                var str1 =  $(this).find("input[id^='username']").val();
                 var found = str.match(/^[a-zA-Z0-9]+$/);
-                var testNumber = str && found !== null;
+                var found1 = str1.match(/^[а-яА-ЯёЁa-zA-Z]{3,16}$/);
+                var testNumber = str && found && found1!== null;
                 if (testNumber) {
                     $.ajax({
                         type: "POST", //Метод отправки
