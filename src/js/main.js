@@ -90,6 +90,7 @@ $( document ).ready(function() {
     loadProductSlider();
     loadProductSlider1();
     loadCatalogProduct();
+    validateForm();
     $(".toggle-text").each(textToggle);
     $(".toggle-text-link").on('click',linkToggle);
 
@@ -491,43 +492,43 @@ $( document ).ready(function() {
     google.maps.event.addDomListener(window, 'load', initialize);
 //END Google Maps JS
 
-    function initialize1() {
-        var myLatlng = new google.maps.LatLng(53.3333,-3.08333);
-        var mapOptions = {
-            zoom: 11,
-            center: myLatlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-
-        var map = new google.maps.Map(document.getElementById('map1'), mapOptions);
-        //Callout Content
-        var contentString = 'Some address here..';
-        //Set window width + content
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 500
-        });
-
-        //Add Marker
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: 'image title'
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map,marker);
-        });
-
-        //Resize Function
-        google.maps.event.addDomListener(window, "resize", function() {
-            var center = map.getCenter();
-            google.maps.event.trigger(map, "resize");
-            map.setCenter(center);
-        });
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize1);
+    // function initialize1() {
+    //     var myLatlng = new google.maps.LatLng(53.3333,-3.08333);
+    //     var mapOptions = {
+    //         zoom: 11,
+    //         center: myLatlng,
+    //         mapTypeId: google.maps.MapTypeId.ROADMAP
+    //     };
+    //
+    //     var map = new google.maps.Map(document.getElementById('map1'), mapOptions);
+    //     //Callout Content
+    //     var contentString = 'Some address here..';
+    //     //Set window width + content
+    //     var infowindow = new google.maps.InfoWindow({
+    //         content: contentString,
+    //         maxWidth: 500
+    //     });
+    //
+    //     //Add Marker
+    //     var marker = new google.maps.Marker({
+    //         position: myLatlng,
+    //         map: map,
+    //         title: 'image title'
+    //     });
+    //
+    //     google.maps.event.addListener(marker, 'click', function() {
+    //         infowindow.open(map,marker);
+    //     });
+    //
+    //     //Resize Function
+    //     google.maps.event.addDomListener(window, "resize", function() {
+    //         var center = map.getCenter();
+    //         google.maps.event.trigger(map, "resize");
+    //         map.setCenter(center);
+    //     });
+    // }
+    //
+    // google.maps.event.addDomListener(window, 'load', initialize1);
 
 //END Google Maps JS
 
@@ -613,6 +614,37 @@ $( document ).ready(function() {
 
     });
 //стр 7. кол-во тоарв
+
+
+
+
+
+    //Аякс отправка форм
+//Документация: http://api.jquery.com/jquery.ajax/
+
+
+            $("#callback-form").submit(function() { //устанавливаем событие отправки для формы с id=form
+                var form_data = $(this).serialize(); //собераем все данные из формы
+                var str =  $(this).find("input[id^='phone']").val();
+                var found = str.match(/^[a-zA-Z0-9]+$/);
+                var testNumber = str && found !== null;
+                if (testNumber) {
+                    $.ajax({
+                        type: "POST", //Метод отправки
+                        url: "mail.php", //путь до php фаила отправителя
+                        data: form_data
+                    }).done(function () {
+                        $('#modal-thank').modal('toggle');
+                    });
+                }
+                else {
+                    alert("Ошибка ввода данных");
+                }
+                return false;
+            });
+
+
+
 
 
 
@@ -814,4 +846,21 @@ function loadProductSlider1(){
         ]
     });
 
+}
+//валидация форм
+function validateForm(){
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('check-valid');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
 }

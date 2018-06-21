@@ -205,23 +205,29 @@
     <div class="section6">
         <div class="contact-form">
             <p class="title-form">Остались вопросы? </p>
-            <form>
+            <form class="callback-form check-valid" id="callback-form" novalidate>
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Имя">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Имя" pattern="^[а-яА-ЯёЁa-zA-Z]{3,16}$" required>
+                            <div class="invalid-feedback">
+                                Некорректное имя
+                            </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Телефон">
+                            <input type="tel" class="form-control" id="phone-user" name="phone-user" placeholder="Телефон" required>
+                            <div class="invalid-feedback">
+                                Вы не ввели телефон!
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Комментарий или вопрос" rows="4"></textarea>
+                            <textarea class="form-control" placeholder="Комментарий или вопрос" id="comment" name="comment" rows="4"></textarea>
                         </div>
                     </div>
                 </div>
@@ -305,6 +311,34 @@
     </div>
     <div class="footer">
         <p>© Copyright 2018, Все права защищены</p>
+    </div>
+</div>
+
+<div class="modal modal-thank fade" id="modal-thank" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-2 justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="material-icons">
+                                close
+                            </i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <p class="modal-title">Cпасибо!!! Мы свяжемся с вами в ближайшее время.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-btn">
+                <div class="button">
+                    <a href="#" ontouchstart="" data-dismiss="modal">ok</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
